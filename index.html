@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emmanuel David | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/javascript/mylogo.jpg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+
+
+    header {
+      background:#1abc9c;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-top: 15px;
+    }
+
+    nav {
+      background: #1abc9c;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+     nav a:hover {
+      color: #1abc9c;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      border-bottom: 2px solid teal;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .btn {
+      background: teal;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #16a085;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #16a085;
+      color: white;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+      margin: 500;
+    }
+    p{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body style="text-align: center;">
+     <div style="text-align: center;"><button onclick="toggleTheme()" style="color: black; background-color: orangered; text-align:center">Switch Theme</button></div> 
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+  <header>
+    <h1>Emmanuel David</h1>
+    <p>Student of Larry Computer Academy</p>
+    <img src="/javascript/my-pic.png" alt="my-photo" class="profile-pic">
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="about">
+    <h2>About Me</h2>
+    <p>I'm Emmanuel David, a passionate and driven tech enthusiast currently training at Larry Computer Academy. With a deep interest in software development and a love for solving real-world problems through code, I’ve begun building a solid foundation in HTML, CSS, and JavaScript.</p>
+    <p>I’m not just learning to code—I’m learning to create. I enjoy turning ideas into simple, functional, and engaging digital experiences. Beyond the screen, I’m disciplined, creative, and eager to grow in the fast-paced world of technology. </p>
+    <p> Whether it’s developing a simple offline website or exploring new tech tools, I believe in learning by doing and improving through consistent practice. My goal is to become a skilled software developer who builds solutions that matter.</p>
+  </div>
+  <div id="skills"   style="font-size: 20px; font-family:'Times New Roman', Times, serif">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>Basic CSS</li>
+      <li>Basic JavaScript</li>
+    </ul>
+  </div>
+
+  <div id="projects"  style="font-size: 20px; font-family:'Times New Roman', Times, serif">
+    <h2>Projects</h2>
+    <p>Developed simple offline websites for practice and experience.</p>
+  </div>
+  <p style="text-align: center; font-size: 40px; color: blue; font-family: 'Times New Roman', Times, serif;">See previous Projects</p>
+  
+  <div style="text-align: center;"><a href="/myhtml/newtable.html" target="_blank">Data Table</a></div>
+  <div style="text-align: center;"><a href="/myhtml/link.html" target="_blank">Links Page</a></div>
+  <div id="contact"  style="font-size: 20px; font-family:'Times New Roman', Times, serif">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:emmanuelprosper314@gmail.com">emmanuelprosper314@gmail.com</a></p>
+    <p>Phone: <a href="tel:+2348036417746">08036417746</a></p>
+    <button class="btn" onclick="showThanks()">Send Message</button>
+  </div>
+  
+  <footer>
+    &copy; 2025 Emmanuel David. All rights reserved.
+  </footer>
+  <div style="text-align: center; color: #16a085; background-color: yellow;">
+    <script>
+    function showThanks() {
+      alert("Thanks for visiting MY portfolio so delighted for you being here!");
+    }
+  </script>
+  </div>
+
+
+</body>
+</html>
