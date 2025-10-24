@@ -1,43 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Simple Calculator</title>
 </head>
 <body>
-    <input type="number" id="num1">
-  <input type="number" id="num2">
-  <button onclick="multiply()">X</button>
-  <button onclick="divide()">Divide</button>
-  <button onclick="add()">+</button>
-  <button onclick="subtract()">-</button>
-
+  <h2>Basic Calculator</h2>
+  <input id="num1" type="number" placeholder="Enter first number">
+  <input id="num2" type="number" placeholder="Enter second number">
+  <br><br>
+  <button onclick="calc('+')">Add</button>
+  <button onclick="calc('-')">Subtract</button>
+  <button onclick="calc('*')">Multiply</button>
+  <button onclick="calc('/')">Divide</button>
   <p id="result"></p>
 
   <script>
-    function getvalues() {
-      const a = parseFloat(document.getElementById('num1').value);
-      const b = parseFloat(document.getElementById('num2').value);
-      return [a,b];
-    }
-    function multiply() {
-      const[a,b] = getvalues();
-      document.getElementById('result').textcontent = a*b;
-    }
-    function divide() {
-      const[a,b] = getvalues();
-      document.getElementById('result').textcontent = a/b;
-    }
-    function add() {
-      const[a,b] = getvalues();
-      document.getElementById('result').textcontent = a+b;
-    }
-    function subtract() {
-      const[a,b] = getvalues();
-      document.getElementById('result').textcontent = a-b;
+    function calc(op) {
+      const a = parseFloat(document.getElementById("num1").value);
+      const b = parseFloat(document.getElementById("num2").value);
+      let res = "Invalid input";
+
+      if (!isNaN(a) && !isNaN(b)) {
+        if (op === '+') res = a + b;
+        else if (op === '-') res = a - b;
+        else if (op === '*') res = a * b;
+        else if (op === '/') res = b !== 0 ? a / b : "Cannot divide by 0";
+      }
+
+      document.getElementById("result").innerText = "Result: " + res;
     }
   </script>
-
 </body>
 </html>
