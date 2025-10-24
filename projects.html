@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects | Emmanuel's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #0f172a;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .project-card p {
+      font-size: 14px;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .project-card a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Projects</h1>
+    <p>A showcase of my recent work</p>
+  </header>
+
+  <nav>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+
+    <div class="project-card">
+      <h3>Weather App</h3>
+      <p>Displays weather using a live API. Built with HTML, CSS, JS.</p>
+      <a href="https://yourweatherapp.vercel.app" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Mini Calculator</h3>
+      <p>A simple calculator that can add, subtract, multiply, and divide.</p>
+        <a href="https://yourcalculator.vercel.app" target="_blank">View Project</a>
+    </div>
+  </section>
+
+</body>
+</html>
