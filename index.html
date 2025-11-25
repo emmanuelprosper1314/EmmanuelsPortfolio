@@ -5,72 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Emmanuel Prosper | Portfolio</title>
   <link rel="icon" href="mylogo.jpg">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* Smooth Page Load Fade */
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f0f4f8;
       color: #333;
       line-height: 1.6;
+      background-image: url('/myimage.jpg');
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out, background 0.5s, color 0.5s;
+      overflow-x: hidden;
+      position: relative;
     }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    /* Dark Theme */
+    body.dark {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
     header {
       background: #1a1a40;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background 0.5s;
+      position: relative;
+      z-index: 5;
     }
+
+    body.dark header {
+      background: #222244;
+    }
+
     .logo {
       color: #fff;
       font-size: 1.5rem;
       font-weight: bold;
     }
+
     .nav-links {
       list-style: none;
       display: flex;
       gap: 1.5rem;
     }
+
     .nav-links a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      position: sticky;
-      top: 10px;
-      bottom: 10px;
     }
+
     .nav-links a:hover {
       color: #ffd700;
     }
 
     .hero {
-      background: url('your-image.jpg') center/cover no-repeat;
-      color: white;
       text-align: center;
       padding: 5rem 2rem;
+      position: relative;
+      z-index: 5;
     }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .hero span {
-      color: #ffd700;
-    }
+
+    .hero h1 { font-size: 3rem; }
+    .hero span { color: #ffd700; }
 
     .section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
+      position: relative;
+      z-index: 5;
     }
-    .section h2 {
-      margin-bottom: 1rem;
-      color: #1a1a40;
-    }
-    .section p {
-      margin-bottom: 1rem;
-    }
+
+    .section h2 { margin-bottom: 1rem; color: #1a1a40; }
+
     .btn {
       display: inline-block;
       margin-top: 1rem;
@@ -79,8 +105,12 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
     }
+
     .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
       background: #333366;
     }
 
@@ -90,11 +120,71 @@
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
+      transition: background 0.5s;
+      position: relative;
+      z-index: 5;
     }
+
+    body.dark footer {
+      background: #222244;
+      color: #aaa;
+    }
+
+    /* ===== Theme Switch Button ===== */
+    .theme-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+      z-index: 10;
+    }
+
+    body.dark .theme-switch {
+      background: #333;
+      color: #fff;
+    }
+
+    /* ===== Floating Logos ===== */
+    .floating-logo {
+      position: fixed; /* stays in background */
+      width: 60px;
+      height: 60px;
+      opacity: 0.3; /* semi-transparent */
+      z-index: 0;
+      animation: floatY linear infinite;
+    }
+
+    @keyframes floatY {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100px) rotate(360deg); }
+    }
+
+    /* Different positions and speeds */
+    .floating-logo:nth-child(1) { left: 5%; animation-duration: 20s; top: 10vh; }
+    .floating-logo:nth-child(2) { left: 25%; animation-duration: 25s; top: 30vh; }
+    .floating-logo:nth-child(3) { left: 50%; animation-duration: 22s; top: 50vh; }
+    .floating-logo:nth-child(4) { left: 75%; animation-duration: 18s; top: 70vh; }
+
   </style>
 </head>
+
 <body>
-  <header>
+  <!-- Theme Switch -->
+  <button class="theme-switch" onclick="toggleTheme()">Switch Theme</button>
+
+  <!-- Floating Logos -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="floating-logo" alt="HTML">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="floating-logo" alt="CSS">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="floating-logo" alt="JS">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="floating-logo" alt="PHP">
+
+  <header data-aos="fade-down">
     <div class="logo">Emmanuel</div>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
@@ -103,43 +193,52 @@
     </ul>
   </header>
 
-  <section class="hero">
+  <section class="hero" data-aos="fade-up">
     <h1 style="color: black;">Hi, I'm <span>Emmanuel Prosper</span></h1>
-    <p  style="color: black;">A passionate web developer & tech enthusiast.</p>
+    <p style="color: black;">A passionate web developer & tech enthusiast.</p>
   </section>
 
-  <section class="section">
-      <h2>About Me</h2>
-  <p>
-    Hello! I'm Emmanuel Prosper, a passionate and curious learner with a growing interest in web development and coding. I enjoy exploring how websites work and love creating simple yet functional web pages using HTML, CSS, and JavaScript.
-  </p>
-  <p>
-    I'm currently studying at Larry Computer Academy, where I'm learning to build websites, solve problems, and grow as a future tech professional. I believe in learning by doing, and I'm always eager to improve my skills through practice and personal projects.
-  </p>
-  <p>
-    When I'm not coding, I enjoy football, playing games, and discovering new technologies. My goal is to become a skilled software developer and contribute to building cool and useful websites and apps.
-  </p>
-      <a href="about.html" class="btn">About me</a>
+  <section class="section" data-aos="fade-up" data-aos-delay="150">
+    <h2>About Me</h2>
+    <p>Hello! I'm Emmanuel Prosper, a passionate and curious learner with a growing interest in web development and coding. I enjoy exploring how websites work and love creating simple yet functional web pages using HTML, CSS, and JavaScript.</p>
+    <p>I'm currently studying at Larry Computer Academy, where I'm learning to build websites, solve problems, and grow as a future tech professional. I believe in learning by doing, and I'm always eager to improve my skills through practice and personal projects.</p>
+    <p>When I'm not coding, I enjoy football, playing games, and discovering new technologies. My goal is to become a skilled software developer and contribute to building cool and useful websites and apps.</p>
+    <a href="about.html" class="btn">About me</a>
   </section>
 
-  <section class="section">
+  <section class="section" data-aos="fade-up" data-aos-delay="200">
     <h2>My Projects</h2>
     <p>I have developed simple offline websites and basic web tools using HTML, CSS, and JavaScript.</p>
     <a href="projects.html" class="btn">View Projects</a>
   </section>
 
-  <section class="section">
+  <section class="section" data-aos="fade-up" data-aos-delay="250">
     <h2>Contact Me</h2>
     <p>Have a project or want to collaborate? Feel free to reach out.</p>
     <a href="contact.html" class="btn">Contact</a>
   </section>
 
-  <footer>
+  <footer data-aos="fade-up" data-aos-delay="300">
     <p>&copy; 2025 Emmanuel Prosper. All rights reserved.</p>
   </footer>
 
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    alert('Welcome!                                                                                           Thank you for visiting my website. I truly appreciate your time and interest. Whether you are here to explore my work, learn more about me, or just passing through—you are valued and welcomed. Feel free to look around and enjoy your stay!')
+    AOS.init({ duration: 900, once: true });
+
+    // Page load fade effect
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Theme switch
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    // Welcome alert
+    alert('Welcome! Thank you for visiting my website. I truly appreciate your time and interest. Whether you are here to explore my work, learn more about me, or just passing through—you are valued and welcomed!');
   </script>
 </body>
 </html>
