@@ -1,173 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Adebamigbe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Emmanuel</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #010101, #1a1a1a, #101820);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+    }
+
+    .top-nav nav a {
+      margin-left: 25px;
+      color: #aaa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .top-nav nav a.active,
+    .top-nav nav a:hover {
+      color: #fff;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      width: 100%;
+      max-width: 550px;
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      animation: fadeIn 0.7s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-card h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    /* Floating Input Fields */
+    .input-group {
+      position: relative;
+      margin: 25px 0;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #555;
+      background: transparent;
+      color: #fff;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+      resize: none;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #aaa;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: #4ea8ff;
+    }
+
+    .input-group input:focus + label,
+    .input-group textarea:focus + label,
+    .input-group input:not(:placeholder-shown) + label,
+    .input-group textarea:not(:placeholder-shown) + label {
+      top: -8px;
+      background: #101820;
+      padding: 0 6px;
+      font-size: 12px;
+      color: #4ea8ff;
+    }
+
+    /* Send Button */
+    .send-btn {
+      width: 100%;
+      padding: 15px;
+      background: #4ea8ff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .send-btn:hover {
+      background: #82c7ff;
+    }
+
+    /* Social Icons */
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .social-links a {
+      color: #ccc;
+      font-size: 26px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #4ea8ff;
+      transform: scale(1.2);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="page-ready">
-  <div id="page" class="page page-enter">
-    <header>
-      <div class="logo">AAH</div>
-      <nav>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
-      </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </header>
 
-    <main>
-      <section class="section contact-full">
-        <h2 class="section-title reveal">Contact Me</h2>
+<body>
 
-        <!-- Success message (shown when ?sent=1 is present or after form submit) -->
-        <div id="formMessage" class="form-message" hidden role="status" aria-live="polite">
-          <strong>Thanks — your message was sent!</strong>
-          <p>I will reply to you at your email as soon as possible.</p>
-        </div>
+<header class="top-nav">
+  <div class="logo">AAH</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</header>
 
-        <!-- Contact Form -->
-        <form id="contactForm" class="contact-form reveal delay-1"
-              action="https://formsubmit.co/adebanjoadebamigbe8@gmail.com"
-              method="POST">
-          <!-- FormSubmit hidden fields -->
-          <input type="hidden" name="_subject" value="New message from portfolio contact form">
-          <input type="hidden" name="_captcha" value="false">
-          <!-- redirect back to contact page with sent flag -->
-          <input type="hidden" name="_next" value="contact.html?sent=1">
+<main class="contact-container">
 
-          <label for="name" class="sr-only">Your name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
+  <div class="contact-card">
 
-          <label for="email" class="sr-only">Your email</label>
-          <input id="email" name="email" type="email" placeholder="Your email" required>
+    <h1>Contact Me</h1>
+    <p class="subtitle">Have a project, idea, or message? I’d love to hear from you.</p>
 
-          <label for="subject" class="sr-only">Subject</label>
-          <input id="subject" name="subject" type="text" placeholder="Subject" required>
+    <!-- Contact Form -->
+    <form action="https://formsubmit.co/emmanuelprosper314@gmail.com" method="POST" class="form">
 
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+      <input type="hidden" name="_subject" value="New portfolio message">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="contact.html?sent=1">
 
-          <div class="form-actions">
-            <button type="submit" id="submitBtn" class="btn primary">Send message</button>
-            <span id="formStatus" class="form-status" aria-hidden="true"></span>
-          </div>
-        </form>
+      <div class="input-group">
+        <input type="text" name="name" id="name" required placeholder=" ">
+        <label for="name">Your Name</label>
+      </div>
 
-        <!-- Social icons (icons only, no text) -->
-        <div class="socials reveal delay-2" aria-label="Social links">
-          <a href="https://www.snapchat.com/add/tuish_boi?share_id=OsykddHjgG4&locale=en-US" target="_blank" rel="noopener" aria-label="Snapchat">
-            <i class="fa-brands fa-snapchat fa-2x"></i>
-          </a>
-          <a href="https://www.tiktok.com/@hand_some_boi" target="_blank" rel="noopener" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com/just_an_handsome_boi" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://handsome8-arch.com" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fa-brands fa-github fa-2x"></i>
-          </a>
-        </div>
-      </section>
-    </main>
+      <div class="input-group">
+        <input type="email" name="email" id="email" required placeholder=" ">
+        <label for="email">Your Email</label>
+      </div>
 
-    <footer>
-      <p>© 2025 ADEBAMIGBE ADEBANJO HANDSOME</p>
-    </footer>
+      <div class="input-group">
+        <input type="text" name="subject" id="subject" required placeholder=" ">
+        <label for="subject">Subject</label>
+      </div>
+
+      <div class="input-group textarea">
+        <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+        <label for="message">Your Message</label>
+      </div>
+
+      <button type="submit" class="send-btn">Send Message</button>
+
+    </form>
+
+    <!-- Social Icons -->
+    <div class="social-links">
+      <a href="https://www.snapchat.com/add/justemmanuel314?share_id=WHfcOjQNXkI&locale=en-US" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+      <a href="https://www.tiktok.com/@ronaldo_stepson?_r=1&_t=ZS-929tomQtYZU" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/emzolarvish?igsh=MTNwaDFpbzc3dWxsYg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://emmanuelprosper1314-arch.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html><!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Adebamigbe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-</head>
-<body class="page-ready">
-  <div id="page" class="page page-enter">
-    <header>
-      <div class="logo">AAH</div>
-      <nav>
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link active">Contact</a>
-      </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
-    </header>
+</main>
 
-    <main>
-      <section class="section contact-full">
-        <h2 class="section-title reveal">Contact Me</h2>
+<footer class="footer">
+  © 2025 David Emmanuel Prosper
+</footer>
 
-        <!-- Success message (shown when ?sent=1 is present or after form submit) -->
-        <div id="formMessage" class="form-message" hidden role="status" aria-live="polite">
-          <strong>Thanks — your message was sent!</strong>
-          <p>I will reply to you at your email as soon as possible.</p>
-        </div>
-
-        <!-- Contact Form -->
-        <form id="contactForm" class="contact-form reveal delay-1"
-              action="https://formsubmit.co/adebanjoadebamigbe8@gmail.com"
-              method="POST">
-          <!-- FormSubmit hidden fields -->
-          <input type="hidden" name="_subject" value="New message from portfolio contact form">
-          <input type="hidden" name="_captcha" value="false">
-          <!-- redirect back to contact page with sent flag -->
-          <input type="hidden" name="_next" value="contact.html?sent=1">
-
-          <label for="name" class="sr-only">Your name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required>
-
-          <label for="email" class="sr-only">Your email</label>
-          <input id="email" name="email" type="email" placeholder="Your email" required>
-
-          <label for="subject" class="sr-only">Subject</label>
-          <input id="subject" name="subject" type="text" placeholder="Subject" required>
-
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
-
-          <div class="form-actions">
-            <button type="submit" id="submitBtn" class="btn primary">Send message</button>
-            <span id="formStatus" class="form-status" aria-hidden="true"></span>
-          </div>
-        </form>
-
-        <!-- Social icons (icons only, no text) -->
-        <div class="socials reveal delay-2" aria-label="Social links">
-          <a href="https://www.snapchat.com/add/tuish_boi?share_id=OsykddHjgG4&locale=en-US" target="_blank" rel="noopener" aria-label="Snapchat">
-            <i class="fa-brands fa-snapchat fa-2x"></i>
-          </a>
-          <a href="https://www.tiktok.com/@hand_some_boi" target="_blank" rel="noopener" aria-label="TikTok">
-            <i class="fa-brands fa-tiktok fa-2x"></i>
-          </a>
-          <a href="https://www.instagram.com/just_an_handsome_boi" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram fa-2x"></i>
-          </a>
-          <a href="https://handsome8-arch.com" target="_blank" rel="noopener" aria-label="GitHub">
-            <i class="fa-brands fa-github fa-2x"></i>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 ADEBAMIGBE ADEBANJO HANDSOME</p>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
