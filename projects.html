@@ -2,95 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Projects | Emmanuel's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Emmanuel Prosper</title>
 
-header {
-  background-color: #0f172a;
-  padding: 20px;
-  text-align: center;
-  color: white;
-}
-
-h1 {
-  margin-bottom: 10px;
-}
-
-nav {
-  background-color: #1e293b;
-  text-align: center;
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  position: sticky;
-  top: 10px;
-  bottom: 10px;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-  .projects {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .project-card {
-    margin-bottom: 20px;
-  }
-}
-  </style>
+  <link rel="icon" href="mylogo.jpg">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>My Projects</h1>
-    <p>A showcase of my recent work</p>
-  </header>
+<header>
+  <div class="logo">Emmanuel</div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
 
+<section class="section">
+  <h2>My Projects</h2>
+  <p>Here are some real projects I’ve built while learning web development.</p>
+</section>
+
+<section class="section">
+
+  <div class="projects">
 
     <div class="project-card">
-      <h3>Weather App</h3>
-      <p>Displays weather using a live API. Built with HTML, CSS, JS.</p>
-      <a href="https://yourweatherapp.vercel.app" target="_blank">View Project</a>
+      <h3>To Do App</h3>
+      <p> A simple task management web app that allows users to add, mark as complete, and delete tasks. It stores tasks in the browser using localStorage so data persists after refresh, and dynamically updates the UI based on the current task state.
+      </p>
+      <a href="todoapp.html" target="_self">View Project →</a>
     </div>
 
     <div class="project-card">
-      <h3>Mini Calculator</h3>
-      <p>A simple calculator that can add, subtract, multiply, and divide.</p>
-        <a href="https://yourcalculator.vercel.app" target="_blank">View Project</a>
+      <h3>Calculator</h3>
+      <p>A clean calculator that performs basic arithmetic operations.</p>
+      <a href="calculator.html" target="_self">View Project →</a>
     </div>
-  </section>
+
+
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Emmanuel Prosper</p>
+</footer>
 
 </body>
 </html>
