@@ -3,27 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | Emmanuel Prosper</title>
+  <meta name="description" content="Check out the web development projects I've built including task managers, calculators, and more. Built with HTML, CSS, JavaScript, and PHP.">
+  <meta name="keywords" content="web projects, portfolio projects, frontend projects, JavaScript projects, web applications">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects | Emmanuel Prosper" />
+  <meta property="og:description" content="Explore my web development projects and see what I can build for you." />
+  <meta property="og:url" content="https://emmanuelsportfolio.com/projects.html" />
 
+  <title>Projects | Emmanuel Prosper</title>
   <link rel="icon" href="mylogo.jpg">
   <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://emmanuelsportfolio.com/projects.html" />
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Emmanuel</div>
+  <div class="header-inner">
+    <div class="logo">Emmanuel</div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
+
+<main>
 
 <section class="section">
   <h2>My Projects</h2>
-  <p>Here are some real projects I’ve built while learning web development.</p>
+  <p>Here are some real projects I've built while developing my web development skills. Each project showcases my abilities in different technologies and demonstrates my commitment to writing clean, maintainable code.</p>
 </section>
 
 <section class="section">
@@ -32,24 +53,53 @@
 
     <div class="project-card">
       <h3>To Do App</h3>
-      <p> A simple task management web app that allows users to add, mark as complete, and delete tasks. It stores tasks in the browser using localStorage so data persists after refresh, and dynamically updates the UI based on the current task state.
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+      <p>
+        A fully functional task management application that allows users to add, mark as complete, and delete tasks. Features persistent local storage so your tasks are saved between sessions, dynamic UI updates, and a clean, intuitive user interface. Perfect for daily task organization.
       </p>
-      <a href="todoapp.html" target="_self">View Project →</a>
+      <div class="project-links">
+        <a href="todoapp.html">View Project →</a>
+      </div>
     </div>
 
     <div class="project-card">
       <h3>Calculator</h3>
-      <p>A clean calculator that performs basic arithmetic operations.</p>
-      <a href="calculator.html" target="_self">View Project →</a>
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+      <p>
+        A clean and responsive calculator web application that performs basic arithmetic operations with a user-friendly interface. Supports addition, subtraction, multiplication, and division with real-time display of calculations.
+      </p>
+      <div class="project-links">
+        <a href="calculator.html">View Project →</a>
+      </div>
     </div>
-
 
   </div>
 
 </section>
 
+</main>
+
 <footer>
-  <p>© 2026 Emmanuel Prosper</p>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Emmanuel Prosper. All rights reserved. | Crafted with care and clean code.</p>
+    </div>
+  </div>
 </footer>
 
 </body>

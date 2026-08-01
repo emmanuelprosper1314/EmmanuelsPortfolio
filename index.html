@@ -2,70 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emmanuel Prosper | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emmanuel Prosper - Full-stack web developer specializing in modern, responsive websites using HTML, CSS, JavaScript, and PHP. View my projects and let's build something amazing together." />
+  <meta name="keywords" content="web developer, frontend developer, full-stack, HTML, CSS, JavaScript, PHP, responsive design, web development" />
+  <meta name="author" content="Emmanuel Prosper" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://emmanuelsportfolio.com" />
+  <meta property="og:title" content="Emmanuel Prosper | Web Developer & Full-Stack Engineer" />
+  <meta property="og:description" content="Crafting modern, responsive websites with clean code and exceptional user experience. View my portfolio and projects." />
+  <meta property="og:site_name" content="Emmanuel Prosper Portfolio" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://emmanuelsportfolio.com" />
+  <meta name="twitter:title" content="Emmanuel Prosper | Web Developer" />
+  <meta name="twitter:description" content="Crafting modern, responsive websites with clean code. Explore my projects and get in touch." />
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emmanuel Prosper",
+    "jobTitle": "Web Developer",
+    "url": "https://emmanuelsportfolio.com",
+    "sameAs": [
+      "https://github.com/emmanuelprosper1314"
+    ]
+  }
+  </script>
 
-  <link rel="icon" href="mylogo.jpg">
-  <link rel="stylesheet" href="style.css">
+  <title>Emmanuel Prosper | Web Developer & Full-Stack Engineer</title>
+  <link rel="icon" href="mylogo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://emmanuelsportfolio.com" />
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Emmanuel</div>
+  <div class="header-inner">
+    <div class="logo">Emmanuel</div>
 
-  <ul class="nav-links">
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
 
-<section class="hero">
-  <h1>Hi, I'm <span>Emmanuel Prosper</span></h1>
-  <p id="typing"></p>
+<main>
 
-  <div class="hero-buttons">
-    <a href="projects.html" class="btn">View Projects</a>
-    <a href="contact.html" class="btn outline">Contact Me</a>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Hi, I'm <span>Emmanuel Prosper</span></h1>
+    <p class="hero-subtitle">I build modern, responsive websites with clean code and exceptional user experience</p>
+
+    <div class="hero-role">
+      <p class="hero-role-label">Currently working as a:</p>
+      <p id="typing"></p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn">View My Work</a>
+      <a href="contact.html" class="btn outline">Get In Touch</a>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="about-preview">
   <h2>About Me</h2>
   <p>
-    I’m a passionate web developer learning to build modern, responsive websites
-    using HTML, CSS, and JavaScript.
+    I'm a passionate web developer dedicated to creating modern, responsive websites that users love. 
+    With expertise in HTML, CSS, JavaScript, and PHP, I transform ideas into digital experiences that make an impact.
   </p>
+  <a href="about.html" class="btn btn-small">Read My Story</a>
 </section>
 
-<section class="section">
-  <h2>Skills</h2>
+<section class="section" id="skills-preview">
+  <h2>Skills & Technologies</h2>
+  <p>I specialize in modern web development with a strong foundation in both frontend and backend technologies.</p>
 
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">PHP</div>
-    <div class="skill">Git</div>
-        <div class="skill">Bootstrap</div>
+  <div class="skill-group">
+    <h3 class="expertise-title">Frontend</h3>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Git</div>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <h3 class="expertise-title">Backend & Tools</h3>
+    <div class="skills">
+      <div class="skill">PHP</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Web Performance</div>
+      <div class="skill">Accessibility</div>
+      <div class="skill">SEO</div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Projects</h2>
-  <p>Some of the projects I’ve built while learning web development.</p>
-  <a href="projects.html" class="btn">See Projects</a>
+<section class="section" id="projects-preview">
+  <h2>Featured Projects</h2>
+  <p>Here are some of the projects I've built while developing my skills in web development.</p>
+  <a href="projects.html" class="btn">View All Projects</a>
 </section>
 
-<section class="section">
-  <h2>Let’s Work Together</h2>
-  <p>If you have an idea or project, feel free to reach out.</p>
-  <a href="contact.html" class="btn">Hire Me</a>
+<section class="section" id="cta">
+  <h2>Ready to Work Together?</h2>
+  <p>Whether you have a question or a project idea, I'd love to hear from you. Let's create something amazing together.</p>
+  <a href="contact.html" class="btn">Start a Conversation</a>
 </section>
+
+</main>
 
 <footer>
-  <p>© 2026 Emmanuel Prosper</p>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Emmanuel Prosper. All rights reserved. | Crafted with care and clean code.</p>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>

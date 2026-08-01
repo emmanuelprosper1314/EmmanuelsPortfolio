@@ -3,48 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Emmanuel Prosper</title>
+  <meta name="description" content="Learn more about Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites. Discover my journey, skills, and what drives my passion for web development.">
+  <meta name="keywords" content="web developer, about Emmanuel Prosper, web development journey, skills, experience">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About | Emmanuel Prosper" />
+  <meta property="og:description" content="Learn about Emmanuel Prosper's journey as a web developer and his passion for creating amazing web experiences." />
+  <meta property="og:url" content="https://emmanuelsportfolio.com/about.html" />
 
+  <title>About Me | Emmanuel Prosper</title>
   <link rel="icon" href="mylogo.jpg">
   <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://emmanuelsportfolio.com/about.html" />
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Emmanuel</div>
+  <div class="header-inner">
+    <div class="logo">Emmanuel</div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
 </header>
+
+<main>
 
 <section class="section">
   <h2>About Me</h2>
 
   <p>
-    I’m Emmanuel Prosper, a passionate beginner web developer currently learning
-    how to build modern and responsive websites using HTML, CSS, and JavaScript.
+    I'm Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites that users love. With expertise in HTML, CSS, JavaScript, and PHP, I transform ideas into digital experiences that make an impact. I believe great web development combines clean code with thoughtful design.
   </p>
 
   <p>
-    I enjoy turning ideas into simple digital experiences and improving my skills
-    through constant practice and real projects.
+    My journey in web development is driven by curiosity and a commitment to continuous learning. I'm always excited to explore new technologies, refine my craft, and take on challenges that push my skills to the next level.
   </p>
 </section>
 
 <section class="section">
-  <h2>My Skills</h2>
+  <h2>My Expertise</h2>
 
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">PHP</div>
-    <div class="skill">Git</div>
-    <div class="skill">Responsive Design</div>
+<h3 class="expertise-title">Frontend Development</h3>
+  <p>
+    I create beautiful, responsive user interfaces using semantic HTML, modern CSS techniques, and vanilla JavaScript. I focus on accessibility, performance, and user experience to deliver websites that work seamlessly across all devices.
+  </p>
+
+  <h3 class="expertise-title">Backend Development</h3>
+  <p>
+    With PHP expertise, I build robust server-side solutions that power web applications. I understand databases, API development, and server configuration to create full-stack web experiences.
+  </p>
+
+  <h3 class="expertise-title">Web Performance & Optimization</h3>
+  <p>
+    I optimize websites for speed and performance, ensuring fast load times and smooth user experiences. I understand the importance of optimization for user satisfaction and search rankings.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Technical Skills</h2>
+
+  <div class="skill-group">
+    <h3 class="expertise-title">Languages & Frameworks</h3>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">PHP</div>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <h3 class="expertise-title">Tools & Practices</h3>
+    <div class="skills">
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Web Accessibility</div>
+      <div class="skill">SEO</div>
+    </div>
   </div>
 </section>
 
@@ -52,12 +102,15 @@
   <h2>My Journey</h2>
 
   <p>
-    I started learning web development recently and have been building small projects
-    to improve my skills. Each project helps me understand real-world development better.
+    I started learning web development because I was fascinated by the idea of bringing ideas to life on the web. Each project has taught me something valuable, from solving complex problems to understanding user psychology and design principles.
   </p>
 
   <p>
-    My goal is to become a full-stack developer and work on impactful software projects.
+    I'm constantly improving my skills through real projects, exploring new technologies, and staying updated with industry best practices. My goal is to become a full-stack developer capable of building impactful software that makes a difference.
+  </p>
+
+  <p>
+    I believe in writing clean, maintainable code and creating experiences that delight users. Every project is an opportunity to learn, grow, and deliver excellence.
   </p>
 </section>
 
@@ -65,13 +118,30 @@
   <h2>Let’s Connect</h2>
 
   <p>
-    If you want to collaborate or talk about tech, visit my
-    <a href="contact.html">Contact page</a>.
+    I'm always interested in collaborating on exciting projects, discussing web development trends, or just chatting about tech. Feel free to reach out!
   </p>
+
+  <div class="btn-group">
+    <a href="contact.html" class="btn">Get in Touch</a>
+    <a href="projects.html" class="btn outline">View My Work</a>
+  </div>
 </section>
 
+</main>
+
 <footer>
-  <p>© 2026 Emmanuel Prosper</p>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Emmanuel Prosper. All rights reserved. | Crafted with care and clean code.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
