@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn more about Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites. Discover my journey, skills, and what drives my passion for web development.">
+  <meta name="description" content="Learn more about Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites. Discover my journey, skills, and what drives me.">
   <meta name="keywords" content="web developer, about Emmanuel Prosper, web development journey, skills, experience">
-  
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="About | Emmanuel Prosper" />
-  <meta property="og:description" content="Learn about Emmanuel Prosper's journey as a web developer and his passion for creating amazing web experiences." />
+  <meta property="og:description" content="Discover Emmanuel Prosper's journey as a web developer and his passion for creating amazing web experiences." />
   <meta property="og:url" content="https://emmanuelsportfolio.com/about.html" />
 
   <title>About Me | Emmanuel Prosper</title>
@@ -20,19 +20,53 @@
 
 <body>
 
+<!-- Page Loader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__brand">Emmanuel</div>
+  <div class="loader__bar"></div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom Cursor -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Animated Background Layers -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__aurora"></div>
+  <div class="bg-fx__orb bg-fx__orb--1"></div>
+  <div class="bg-fx__orb bg-fx__orb--2"></div>
+  <div class="bg-fx__orb bg-fx__orb--3"></div>
+  <div class="bg-fx__grid"></div>
+  <div class="bg-fx__noise"></div>
+  <div class="bg-fx__beam bg-fx__beam--1"></div>
+  <div class="bg-fx__beam bg-fx__beam--2"></div>
+  <div class="bg-fx__cursor-glow"></div>
+  <div class="bg-fx__particles"></div>
+  <div class="bg-fx__shapes">
+    <div class="bg-fx__shape bg-fx__shape--1"></div>
+    <div class="bg-fx__shape bg-fx__shape--2"></div>
+    <div class="bg-fx__shape bg-fx__shape--3"></div>
+    <div class="bg-fx__shape bg-fx__shape--4"></div>
+  </div>
+</div>
+
 <header>
   <div class="header-inner">
-    <div class="logo">Emmanuel</div>
+    <a href="index.html" class="logo">Emmanuel</a>
 
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="is-active">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
       <span></span>
       <span></span>
       <span></span>
@@ -42,90 +76,84 @@
 
 <main>
 
-<section class="section">
-  <h2>About Me</h2>
+  <section class="section">
+    <h2 data-reveal="left">About Me</h2>
+    <p data-reveal>
+      I'm Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites that users love. With expertise in HTML, CSS, JavaScript, and PHP, I transform ideas into digital experiences that make an impact. I believe great web development combines clean code with thoughtful design.
+    </p>
+    <p data-reveal>
+      My journey in web development is driven by curiosity and a commitment to continuous learning. I'm always excited to explore new technologies, refine my craft, and take on challenges that push my skills to the next level.
+    </p>
+  </section>
 
-  <p>
-    I'm Emmanuel Prosper, a passionate web developer dedicated to creating modern, responsive websites that users love. With expertise in HTML, CSS, JavaScript, and PHP, I transform ideas into digital experiences that make an impact. I believe great web development combines clean code with thoughtful design.
-  </p>
+  <section class="section">
+    <h2 data-reveal="left">My Expertise</h2>
 
-  <p>
-    My journey in web development is driven by curiosity and a commitment to continuous learning. I'm always excited to explore new technologies, refine my craft, and take on challenges that push my skills to the next level.
-  </p>
-</section>
+    <h3 class="expertise-title" data-reveal>Frontend Development</h3>
+    <p data-reveal>
+      I create beautiful, responsive user interfaces using semantic HTML, modern CSS techniques, and vanilla JavaScript. I focus on accessibility, performance, and user experience to deliver websites that work seamlessly across all devices.
+    </p>
 
-<section class="section">
-  <h2>My Expertise</h2>
+    <h3 class="expertise-title" data-reveal>Backend Development</h3>
+    <p data-reveal>
+      With PHP expertise, I build robust server-side solutions that power web applications. I understand databases, API development, and server configuration to create full-stack web experiences.
+    </p>
 
-<h3 class="expertise-title">Frontend Development</h3>
-  <p>
-    I create beautiful, responsive user interfaces using semantic HTML, modern CSS techniques, and vanilla JavaScript. I focus on accessibility, performance, and user experience to deliver websites that work seamlessly across all devices.
-  </p>
+    <h3 class="expertise-title" data-reveal>Web Performance &amp; Optimization</h3>
+    <p data-reveal>
+      I optimize websites for speed and performance, ensuring fast load times and smooth user experiences. I understand the importance of optimization for user satisfaction and search rankings.
+    </p>
+  </section>
 
-  <h3 class="expertise-title">Backend Development</h3>
-  <p>
-    With PHP expertise, I build robust server-side solutions that power web applications. I understand databases, API development, and server configuration to create full-stack web experiences.
-  </p>
+  <section class="section">
+    <h2 data-reveal="left">Technical Skills</h2>
 
-  <h3 class="expertise-title">Web Performance & Optimization</h3>
-  <p>
-    I optimize websites for speed and performance, ensuring fast load times and smooth user experiences. I understand the importance of optimization for user satisfaction and search rankings.
-  </p>
-</section>
-
-<section class="section">
-  <h2>Technical Skills</h2>
-
-  <div class="skill-group">
-    <h3 class="expertise-title">Languages & Frameworks</h3>
-    <div class="skills">
-      <div class="skill">HTML5</div>
-      <div class="skill">CSS3</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">PHP</div>
+    <div class="skill-group">
+      <h3 class="expertise-title" data-reveal>Languages &amp; Frameworks</h3>
+      <div class="skills">
+        <div class="skill" data-reveal>HTML5</div>
+        <div class="skill" data-reveal>CSS3</div>
+        <div class="skill" data-reveal>JavaScript</div>
+        <div class="skill" data-reveal>PHP</div>
+      </div>
     </div>
-  </div>
 
-  <div class="skill-group">
-    <h3 class="expertise-title">Tools & Practices</h3>
-    <div class="skills">
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">Bootstrap</div>
-      <div class="skill">Responsive Design</div>
-      <div class="skill">Web Accessibility</div>
-      <div class="skill">SEO</div>
+    <div class="skill-group">
+      <h3 class="expertise-title" data-reveal>Tools &amp; Practices</h3>
+      <div class="skills">
+        <div class="skill" data-reveal>Git &amp; GitHub</div>
+        <div class="skill" data-reveal>Bootstrap</div>
+        <div class="skill" data-reveal>Responsive Design</div>
+        <div class="skill" data-reveal>Web Accessibility</div>
+        <div class="skill" data-reveal>SEO</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section">
-  <h2>My Journey</h2>
+  <section class="section">
+    <h2 data-reveal="left">My Journey</h2>
+    <p data-reveal>
+      I started learning web development because I was fascinated by the idea of bringing ideas to life on the web. Each project has taught me something valuable, from solving complex problems to understanding user psychology and design principles.
+    </p>
+    <p data-reveal>
+      I'm constantly improving my skills through real projects, exploring new technologies, and staying updated with industry best practices. My goal is to become a full-stack developer capable of building impactful software that makes a difference.
+    </p>
+    <p data-reveal>
+      I believe in writing clean, maintainable code and creating experiences that delight users. Every project is an opportunity to learn, grow, and deliver excellence.
+    </p>
+  </section>
 
-  <p>
-    I started learning web development because I was fascinated by the idea of bringing ideas to life on the web. Each project has taught me something valuable, from solving complex problems to understanding user psychology and design principles.
-  </p>
+  <section class="section">
+    <h2 data-reveal="left">Let's Connect</h2>
+    <p data-reveal>
+      I'm always interested in collaborating on exciting projects, discussing web development trends, or just chatting about tech. Feel free to reach out!
+    </p>
 
-  <p>
-    I'm constantly improving my skills through real projects, exploring new technologies, and staying updated with industry best practices. My goal is to become a full-stack developer capable of building impactful software that makes a difference.
-  </p>
-
-  <p>
-    I believe in writing clean, maintainable code and creating experiences that delight users. Every project is an opportunity to learn, grow, and deliver excellence.
-  </p>
-</section>
-
-<section class="section">
-  <h2>Let’s Connect</h2>
-
-  <p>
-    I'm always interested in collaborating on exciting projects, discussing web development trends, or just chatting about tech. Feel free to reach out!
-  </p>
-
-  <div class="btn-group">
-    <a href="contact.html" class="btn">Get in Touch</a>
-    <a href="projects.html" class="btn outline">View My Work</a>
-  </div>
-</section>
+    <div class="btn-group" data-reveal>
+      <a href="contact.html" class="btn">Get in Touch</a>
+      <a href="projects.html" class="btn outline">View My Work</a>
+    </div>
+  </section>
 
 </main>
 
@@ -133,6 +161,7 @@
   <div class="footer-content">
     <div class="footer-links">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
       <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -144,5 +173,13 @@
   </div>
 </footer>
 
+<noscript>
+  <div style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: #1a2640; color: #f1f5f9; text-align: center; padding: 12px; font-family: sans-serif;">
+    Please enable JavaScript for the full interactive experience.
+  </div>
+</noscript>
+
+<script src="script.js"></script>
 </body>
 </html>
+

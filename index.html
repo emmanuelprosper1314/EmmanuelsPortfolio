@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Emmanuel Prosper - Full-stack web developer specializing in modern, responsive websites using HTML, CSS, JavaScript, and PHP. View my projects and let's build something amazing together." />
-  <meta name="keywords" content="web developer, frontend developer, full-stack, HTML, CSS, JavaScript, PHP, responsive design, web development" />
-  <meta name="author" content="Emmanuel Prosper" />
-  <meta name="robots" content="index, follow" />
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emmanuel Prosper — passionate web developer creating modern, responsive websites with HTML, CSS, JavaScript, and PHP. Explore my portfolio, projects, and skills.">
+  <meta name="keywords" content="web developer, portfolio, Emmanuel Prosper, frontend developer, JavaScript, HTML, CSS, PHP, web development">
+
   <!-- Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://emmanuelsportfolio.com" />
-  <meta property="og:title" content="Emmanuel Prosper | Web Developer & Full-Stack Engineer" />
-  <meta property="og:description" content="Crafting modern, responsive websites with clean code and exceptional user experience. View my portfolio and projects." />
-  <meta property="og:site_name" content="Emmanuel Prosper Portfolio" />
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://emmanuelsportfolio.com" />
-  <meta name="twitter:title" content="Emmanuel Prosper | Web Developer" />
-  <meta name="twitter:description" content="Crafting modern, responsive websites with clean code. Explore my projects and get in touch." />
-  
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Emmanuel Prosper",
-    "jobTitle": "Web Developer",
-    "url": "https://emmanuelsportfolio.com",
-    "sameAs": [
-      "https://github.com/emmanuelprosper1314"
-    ]
-  }
-  </script>
+  <meta property="og:title" content="Emmanuel Prosper | Web Developer Portfolio" />
+  <meta property="og:description" content="Passionate web developer crafting modern, responsive websites and digital experiences." />
+  <meta property="og:url" content="https://emmanuelsportfolio.com/" />
 
-  <title>Emmanuel Prosper | Web Developer & Full-Stack Engineer</title>
-  <link rel="icon" href="mylogo.jpg" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="canonical" href="https://emmanuelsportfolio.com" />
+  <title>Emmanuel Prosper | Web Developer Portfolio</title>
+  <link rel="icon" href="mylogo.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://emmanuelsportfolio.com/" />
 </head>
 
 <body>
 
+<!-- Page Loader -->
+<div class="loader" aria-hidden="true">
+  <div class="loader__brand">Emmanuel</div>
+  <div class="loader__bar"></div>
+</div>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Custom Cursor (desktop only, JS-enabled) -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- Animated Background Layers -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__aurora"></div>
+  <div class="bg-fx__orb bg-fx__orb--1"></div>
+  <div class="bg-fx__orb bg-fx__orb--2"></div>
+  <div class="bg-fx__orb bg-fx__orb--3"></div>
+  <div class="bg-fx__grid"></div>
+  <div class="bg-fx__noise"></div>
+  <div class="bg-fx__beam bg-fx__beam--1"></div>
+  <div class="bg-fx__beam bg-fx__beam--2"></div>
+  <div class="bg-fx__cursor-glow"></div>
+  <div class="bg-fx__particles"></div>
+  <div class="bg-fx__shapes">
+    <div class="bg-fx__shape bg-fx__shape--1"></div>
+    <div class="bg-fx__shape bg-fx__shape--2"></div>
+    <div class="bg-fx__shape bg-fx__shape--3"></div>
+    <div class="bg-fx__shape bg-fx__shape--4"></div>
+  </div>
+</div>
+
 <header>
   <div class="header-inner">
-    <div class="logo">Emmanuel</div>
+    <a href="index.html" class="logo">Emmanuel</a>
 
     <nav>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
+        <li><a href="index.html" class="is-active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
+    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
       <span></span>
       <span></span>
       <span></span>
@@ -66,76 +76,137 @@
 
 <main>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>Hi, I'm <span>Emmanuel Prosper</span></h1>
-    <p class="hero-subtitle">I build modern, responsive websites with clean code and exceptional user experience</p>
+  <!-- HERO -->
+  <section class="hero" data-reveal="zoom">
+    <div class="hero-content">
+      <h1>Hi, I'm Emmanuel Prosper</h1>
+      <p class="hero-subtitle">Passionate Web Developer crafting modern, responsive experiences that make an impact.</p>
 
-    <div class="hero-role">
-      <p class="hero-role-label">Currently working as a:</p>
-      <p id="typing"></p>
+      <div class="hero-chips">
+        <span class="hero-chip">HTML5</span>
+        <span class="hero-chip">CSS3</span>
+        <span class="hero-chip">JavaScript</span>
+        <span class="hero-chip">PHP</span>
+        <span class="hero-chip">Responsive Design</span>
+        <span class="hero-chip">SEO</span>
+      </div>
+
+      <div class="hero-role">
+        <span id="typing" role="status" aria-live="polite"></span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="projects.html" class="btn">View My Work</a>
+        <a href="contact.html" class="btn outline">Get In Touch</a>
+      </div>
     </div>
 
-    <div class="hero-buttons">
-      <a href="projects.html" class="btn">View My Work</a>
-      <a href="contact.html" class="btn outline">Get In Touch</a>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-indicator__mouse"></span>
+      <span>Scroll</span>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="about-preview">
-  <h2>About Me</h2>
-  <p>
-    I'm a passionate web developer dedicated to creating modern, responsive websites that users love. 
-    With expertise in HTML, CSS, JavaScript, and PHP, I transform ideas into digital experiences that make an impact.
-  </p>
-  <a href="about.html" class="btn btn-small">Read My Story</a>
-</section>
+  <!-- STATS -->
+  <section class="section" aria-label="Quick stats">
+    <div class="stats">
+      <div class="stat" data-reveal>
+        <div class="stat__number" data-counter="5" data-suffix="+">0</div>
+        <div class="stat__label">Projects Built</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__number" data-counter="4" data-suffix="+">0</div>
+        <div class="stat__label">Technologies</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__number" data-counter="100" data-suffix="%">0</div>
+        <div class="stat__label">Commitment</div>
+      </div>
+      <div class="stat" data-reveal>
+        <div class="stat__number" data-counter="24" data-suffix="/7">0</div>
+        <div class="stat__label">Available</div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" id="skills-preview">
-  <h2>Skills & Technologies</h2>
-  <p>I specialize in modern web development with a strong foundation in both frontend and backend technologies.</p>
+  <!-- WHAT I DO -->
+  <section class="section">
+    <h2 data-reveal="left">What I Do</h2>
+    <p data-reveal>I build beautiful, functional, and accessible web experiences. From crafting pixel-perfect interfaces to building robust server-side solutions, I bring ideas to life with clean, maintainable code.</p>
 
-  <div class="skill-group">
-    <h3 class="expertise-title">Frontend</h3>
     <div class="skills">
-      <div class="skill">HTML5</div>
-      <div class="skill">CSS3</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">Responsive Design</div>
-      <div class="skill">Git</div>
+      <div class="skill" data-reveal>Frontend Development</div>
+      <div class="skill" data-reveal>Backend Development</div>
+      <div class="skill" data-reveal>Responsive Design</div>
+      <div class="skill" data-reveal>Web Performance</div>
+      <div class="skill" data-reveal>SEO & Accessibility</div>
     </div>
-  </div>
+  </section>
 
-  <div class="skill-group">
-    <h3 class="expertise-title">Backend & Tools</h3>
-    <div class="skills">
-      <div class="skill">PHP</div>
-      <div class="skill">Bootstrap</div>
-      <div class="skill">Web Performance</div>
-      <div class="skill">Accessibility</div>
-      <div class="skill">SEO</div>
+  <!-- FEATURED PROJECTS -->
+  <section class="section">
+    <h2 data-reveal="left">Featured Projects</h2>
+    <p data-reveal>A selection of real projects I've built while developing my skills. Each one demonstrates clean code and thoughtful design.</p>
+
+    <div class="projects">
+      <div class="project-card" data-reveal="zoom">
+        <h3>To Do App</h3>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+        </div>
+        <p>A fully functional task management application with persistent local storage, dynamic UI updates, and a clean, intuitive interface.</p>
+        <div class="project-links">
+          <a href="todoapp.html">View Project →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-reveal="zoom">
+        <h3>Calculator</h3>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+        </div>
+        <p>A clean, responsive calculator that performs basic arithmetic operations with real-time display and a user-friendly interface.</p>
+        <div class="project-links">
+          <a href="calculator.html">View Project →</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-reveal="zoom">
+        <h3>Student Result Management</h3>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">JSON</span>
+        </div>
+        <p>An application that lets teachers manage student records, auto-calculate totals, percentages, and grades in an interactive interface.</p>
+        <div class="project-links">
+          <a href="https://student-result-management314.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="projects-preview">
-  <h2>Featured Projects</h2>
-  <p>Here are some of the projects I've built while developing my skills in web development.</p>
-  <a href="projects.html" class="btn">View All Projects</a>
-</section>
-
-<section class="section" id="cta">
-  <h2>Ready to Work Together?</h2>
-  <p>Whether you have a question or a project idea, I'd love to hear from you. Let's create something amazing together.</p>
-  <a href="contact.html" class="btn">Start a Conversation</a>
-</section>
+  <!-- CTA -->
+  <section class="section">
+    <h2 data-reveal="left">Let's Build Something Great Together</h2>
+    <p data-reveal>Have a project in mind or just want to say hello? I'd love to hear from you. Let's create something amazing.</p>
+    <div class="btn-group" data-reveal>
+      <a href="contact.html" class="btn">Start a Conversation</a>
+      <a href="about.html" class="btn outline">More About Me</a>
+    </div>
+  </section>
 
 </main>
 
 <footer>
   <div class="footer-content">
     <div class="footer-links">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
@@ -148,6 +219,13 @@
   </div>
 </footer>
 
+<noscript>
+  <div style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: #1a2640; color: #f1f5f9; text-align: center; padding: 12px; font-family: sans-serif;">
+    Please enable JavaScript for the full interactive experience.
+  </div>
+</noscript>
+
 <script src="script.js"></script>
 </body>
 </html>
+
