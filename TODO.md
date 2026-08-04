@@ -10,4 +10,5 @@
 - [x] 4. Add Case Studies, Testimonials slider, Skills (premium cards) to index
 - [x] 5. Add Contact (form, map placeholder, socials, success animation), Floating CTA, Footer v2 to index
 - [x] 9. Test all pages — verified file integrity, links, structure, and consistency
+- [x] 10. Remove "JavaScript Compute Lab" and "Responsive Data Table" project cards from Work section; updated filter bar; remaining 3 cards auto-realign
 
