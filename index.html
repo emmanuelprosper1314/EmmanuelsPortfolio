@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Emmanuel Prosper — passionate web developer creating modern, responsive websites with HTML, CSS, JavaScript, and PHP. Explore my portfolio, projects, and skills.">
-  <meta name="keywords" content="web developer, portfolio, Emmanuel Prosper, frontend developer, JavaScript, HTML, CSS, PHP, web development">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Emmanuel Prosper | Web Developer Portfolio" />
-  <meta property="og:description" content="Passionate web developer crafting modern, responsive websites and digital experiences." />
-  <meta property="og:url" content="https://emmanuelsportfolio.com/" />
-
-  <title>Emmanuel Prosper | Web Developer Portfolio</title>
-  <link rel="icon" href="mylogo.jpg">
-  <link rel="stylesheet" href="style.css">
+  <!-- Primary SEO -->
+  <title>Emmanuel Prosper | I Build High-Converting Websites That Help Businesses Grow</title>
+  <meta name="description" content="I build fast, modern, responsive websites that improve trust, generate leads, and deliver a great user experience. Get a free consultation for your business website, landing page, or e-commerce store." />
+  <meta name="keywords" content="web developer, business websites, landing pages, e-commerce, website redesign, SEO, performance optimization, Emmanuel Prosper, freelance web developer" />
+  <meta name="author" content="Emmanuel Prosper" />
   <link rel="canonical" href="https://emmanuelsportfolio.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Emmanuel Prosper | Web Developer — Websites That Grow Businesses" />
+  <meta property="og:description" content="I build fast, modern, responsive websites that improve trust, generate leads, and deliver a great user experience." />
+  <meta property="og:url" content="https://emmanuelsportfolio.com/" />
+  <meta property="og:image" content="https://emmanuelsportfolio.com/my-pic.png" />
+  <meta property="og:site_name" content="Emmanuel Prosper" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emmanuel Prosper | Web Developer — Websites That Grow Businesses" />
+  <meta name="twitter:description" content="I build fast, modern, responsive websites that improve trust, generate leads, and deliver a great user experience." />
+  <meta name="twitter:image" content="https://emmanuelsportfolio.com/my-pic.png" />
+
+  <!-- Favicon / Theme -->
+  <link rel="icon" type="image/jpeg" href="mylogo.jpg" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Fonts (preconnect for performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emmanuel Prosper",
+    "url": "https://emmanuelsportfolio.com/",
+    "image": "https://emmanuelsportfolio.com/my-pic.png",
+    "jobTitle": "Web Developer",
+    "email": "mailto:emmanuelprosper1314@gmail.com",
+    "sameAs": ["https://github.com/emmanuelprosper1314"],
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "PHP", "Responsive Design", "SEO", "Web Performance"]
+  }
+  </script>
+
+  <!-- Structured Data: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Web Design & Development",
+    "provider": { "@type": "Person", "name": "Emmanuel Prosper" },
+    "areaServed": "Worldwide",
+    "description": "Business websites, landing pages, portfolio websites, e-commerce websites, website redesign, maintenance, performance optimization and SEO."
+  }
+  </script>
 </head>
 
 <body>
@@ -29,11 +74,11 @@
 <!-- Scroll Progress Bar -->
 <div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- Custom Cursor (desktop only, JS-enabled) -->
+<!-- Custom Cursor (desktop + JS enabled) -->
 <div class="cursor-dot" aria-hidden="true"></div>
 <div class="cursor-ring" aria-hidden="true"></div>
 
-<!-- Animated Background Layers -->
+<!-- Premium Animated Background System -->
 <div class="bg-fx" aria-hidden="true">
   <div class="bg-fx__aurora"></div>
   <div class="bg-fx__orb bg-fx__orb--1"></div>
@@ -53,18 +98,23 @@
   </div>
 </div>
 
-<header>
+<!-- ========== NAVIGATION ========== -->
+<header class="site-header" id="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo">Emmanuel</a>
+    <a href="#home" class="logo">Emmanuel<span class="logo__dot">.</span></a>
 
-    <nav>
+    <nav class="site-nav" aria-label="Primary navigation">
       <ul class="nav-links">
-        <li><a href="index.html" class="is-active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home" class="is-active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+
+    <a href="#contact" class="btn btn-small btn-nav-cta magnetic">Book a Call</a>
 
     <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
       <span></span>
@@ -76,28 +126,57 @@
 
 <main>
 
-  <!-- HERO -->
-  <section class="hero" data-reveal="zoom">
-    <div class="hero-content">
-      <h1>Hi, I'm Emmanuel Prosper</h1>
-      <p class="hero-subtitle">Passionate Web Developer crafting modern, responsive experiences that make an impact.</p>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home" data-reveal="zoom">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-badge" data-entrance="stagger-1">
+          <span class="hero-badge__dot"></span>
+          Available for new projects
+        </span>
 
-      <div class="hero-chips">
-        <span class="hero-chip">HTML5</span>
-        <span class="hero-chip">CSS3</span>
-        <span class="hero-chip">JavaScript</span>
-        <span class="hero-chip">PHP</span>
-        <span class="hero-chip">Responsive Design</span>
-        <span class="hero-chip">SEO</span>
+        <h1 class="hero-title" data-entrance="stagger-2">
+          I Build <span class="gradient-text">High-Converting Websites</span> That Help Businesses Grow.
+        </h1>
+
+        <p class="hero-subtitle" data-entrance="stagger-3">
+          I create fast, modern, responsive websites that improve trust, generate leads, and deliver a great user experience — so your business can win more customers online.
+        </p>
+
+        <div class="hero-buttons" data-entrance="stagger-4">
+          <a href="#work" class="btn magnetic">View My Work</a>
+          <a href="#contact" class="btn outline magnetic">Book a Free Consultation</a>
+        </div>
+
+        <div class="hero-chips" data-entrance="stagger-5">
+          <span class="hero-chip">HTML5</span>
+          <span class="hero-chip">CSS3</span>
+          <span class="hero-chip">JavaScript</span>
+          <span class="hero-chip">PHP</span>
+          <span class="hero-chip">Responsive</span>
+          <span class="hero-chip">SEO Ready</span>
+        </div>
+
+        <div class="hero-role" aria-hidden="true">
+          <span id="typing" role="status" aria-live="polite"></span>
+        </div>
       </div>
 
-      <div class="hero-role">
-        <span id="typing" role="status" aria-live="polite"></span>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="projects.html" class="btn">View My Work</a>
-        <a href="contact.html" class="btn outline">Get In Touch</a>
+      <div class="hero-profile" data-entrance="fade-up">
+        <div class="profile-card">
+          <div class="profile-card__glow" aria-hidden="true"></div>
+          <div class="profile-card__image">
+            <img src="my-pic.png" alt="Portrait of Emmanuel Prosper, web developer" width="360" height="360" loading="eager" />
+          </div>
+          <h2 class="profile-card__name">Emmanuel Prosper</h2>
+          <p class="profile-card__role">Web Developer &amp; Digital Problem-Solver</p>
+          <div class="profile-card__stats">
+            <div><strong>5+</strong><span>Projects</span></div>
+            <div><strong>10+</strong><span>Skills</span></div>
+            <div><strong>100%</strong><span>Commitment</span></div>
+          </div>
+          <span class="profile-card__status"><span class="status-dot"></span> Open to work &amp; collaborations</span>
+        </div>
       </div>
     </div>
 
@@ -107,115 +186,888 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="section" aria-label="Quick stats">
+  <!-- ========== STATS ========== -->
+  <section class="section" id="stats" aria-label="Quick stats">
     <div class="stats">
       <div class="stat" data-reveal>
-        <div class="stat__number" data-counter="5" data-suffix="+">0</div>
-        <div class="stat__label">Projects Built</div>
+        <div class="stat__number" data-counter="15" data-suffix="+">0</div>
+        <div class="stat__label">Projects Completed</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat__number" data-counter="4" data-suffix="+">0</div>
-        <div class="stat__label">Technologies</div>
+        <div class="stat__number" data-counter="10" data-suffix="+">0</div>
+        <div class="stat__label">Happy Clients</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat__number" data-counter="100" data-suffix="%">0</div>
-        <div class="stat__label">Commitment</div>
+        <div class="stat__number" data-counter="2000" data-suffix="+">0</div>
+        <div class="stat__label">Hours of Coding</div>
       </div>
       <div class="stat" data-reveal>
-        <div class="stat__number" data-counter="24" data-suffix="/7">0</div>
-        <div class="stat__label">Available</div>
+        <div class="stat__number" data-counter="10" data-suffix="+">0</div>
+        <div class="stat__label">Technologies Mastered</div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT I DO -->
-  <section class="section">
-    <h2 data-reveal="left">What I Do</h2>
-    <p data-reveal>I build beautiful, functional, and accessible web experiences. From crafting pixel-perfect interfaces to building robust server-side solutions, I bring ideas to life with clean, maintainable code.</p>
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="section-heading" data-reveal="left">
+          <span class="section-tag">About Me</span>
+          <h2>I help businesses turn visitors into customers.</h2>
+          <p>
+            Your website is your hardest-working salesperson. I build websites that make a strong first impression, explain your value in seconds, and guide visitors toward taking action.
+          </p>
+        </div>
 
-    <div class="skills">
-      <div class="skill" data-reveal>Frontend Development</div>
-      <div class="skill" data-reveal>Backend Development</div>
-      <div class="skill" data-reveal>Responsive Design</div>
-      <div class="skill" data-reveal>Web Performance</div>
-      <div class="skill" data-reveal>SEO & Accessibility</div>
+        <div class="about-points">
+          <div class="about-point" data-reveal>
+            <div class="about-point__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div>
+              <h3>Who I help</h3>
+              <p>Small businesses, startups, and professionals who need a website that works as hard as they do.</p>
+            </div>
+          </div>
+
+          <div class="about-point" data-reveal>
+            <div class="about-point__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            </div>
+            <div>
+              <h3>How I help</h3>
+              <p>I combine clean code, modern design, and conversion-focused UX to build websites that look premium and perform.</p>
+            </div>
+          </div>
+
+          <div class="about-point" data-reveal>
+            <div class="about-point__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <div>
+              <h3>Why trust me</h3>
+              <p>Every project is delivered with clean, maintainable code, fast load times, on-time communication, and ongoing support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual" data-reveal="right">
+        <div class="profile-card profile-card--large">
+          <div class="profile-card__glow" aria-hidden="true"></div>
+          <div class="profile-card__image">
+            <img src="myimage.jpg" alt="Emmanuel Prosper working on a web project" width="420" height="420" loading="lazy" />
+          </div>
+          <h2 class="profile-card__name">Business-First Developer</h2>
+          <p class="profile-card__role">I don't just write code — I build tools that grow revenue, build trust, and save you time.</p>
+          <span class="profile-card__status"><span class="status-dot"></span> Let's build something great</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
-  <section class="section">
-    <h2 data-reveal="left">Featured Projects</h2>
-    <p data-reveal>A selection of real projects I've built while developing my skills. Each one demonstrates clean code and thoughtful design.</p>
+  <!-- ========== SERVICES ========== -->
+  <section class="section" id="services">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Services</span>
+      <h2>Everything your business needs to win online</h2>
+      <p>One partner for strategy, design, development, and growth — so you can focus on running your business.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3>Business Websites</h3>
+        <p>Professional websites that establish credibility, explain your offer, and turn visitors into customers.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+        </div>
+        <h3>Landing Pages</h3>
+        <p>High-converting landing pages built to capture leads, promote launches, and drive specific actions.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        </div>
+        <h3>Portfolio Websites</h3>
+        <p>Stunning personal portfolios that showcase your work, build your brand, and attract better opportunities.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        </div>
+        <h3>E-commerce Websites</h3>
+        <p>Clean, fast online stores with smooth product experiences that make buying easy and enjoyable.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+        </div>
+        <h3>Website Redesign</h3>
+        <p>Outdated website? I'll modernize your design, improve usability, and turn it into a high-performing asset.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <h3>Website Maintenance</h3>
+        <p>Ongoing updates, backups, and improvements to keep your website secure, current, and healthy.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3>Performance Optimization</h3>
+        <p>Fast-loading pages that keep visitors engaged, improve SEO, and reduce bounce rates.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+
+      <div class="service-card glass-card" data-reveal="zoom">
+        <div class="service-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h3>SEO Optimization</h3>
+        <p>On-page SEO, structured data, and technical best practices so customers can actually find you on Google.</p>
+        <a href="#contact" class="service-card__link link-underline">Start your project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE ME ========== -->
+  <section class="section" id="why-me">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Why Choose Me</span>
+      <h2>Premium quality. On time. On budget.</h2>
+      <p>You get more than a website — you get a partner invested in your success.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+        </div>
+        <h3>✓ Modern Design</h3>
+        <p>Award-worthy aesthetics that position your brand as a leader.</p>
+      </div>
+
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <h3>✓ Mobile Responsive</h3>
+        <p>Pixel-perfect on every device — phone, tablet, and desktop.</p>
+      </div>
+
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3>✓ Fast Performance</h3>
+        <p>Lightning-fast load times that visitors and Google both love.</p>
+      </div>
+
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <h3>✓ SEO Friendly</h3>
+        <p>Built on best practices so your business gets found online.</p>
+      </div>
+
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>✓ Secure</h3>
+        <p>Clean code and security best practices to protect your data.</p>
+      </div>
+
+      <div class="why-card glass-card" data-reveal="zoom">
+        <div class="why-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+        </div>
+        <h3>✓ Ongoing Support</h3>
+        <p>I'm here after launch with reliable support and updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section class="section" id="process">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Process</span>
+      <h2>A proven workflow from idea to launch</h2>
+      <p>Clear steps, transparent communication, and zero surprises.</p>
+    </div>
+
+    <div class="process-timeline">
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>01</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Discovery</h3>
+          <p>We discuss your goals, audience, and what success looks like for your business.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>02</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Planning</h3>
+          <p>I map out the structure, content strategy, and a clear roadmap with milestones.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>03</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Design</h3>
+          <p>You get a modern, on-brand design that turns visitors into customers.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>04</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Development</h3>
+          <p>Clean, fast, responsive code brings the design to life for every device.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>05</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Testing</h3>
+          <p>Every page is tested for speed, compatibility, accessibility, and bugs.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>06</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Launch</h3>
+          <p>Your website goes live — fully configured, secure, and ready to grow.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-reveal="left">
+        <div class="process-step__marker"><span>07</span></div>
+        <div class="process-step__content glass-card">
+          <h3>Support</h3>
+          <p>I stay available for updates, improvements, and anything you need next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="work">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Featured Work</span>
+      <h2>Projects that solve real problems</h2>
+      <p>Selected work demonstrating clean code, thoughtful UX, and reliable performance.</p>
+    </div>
+
+    <div class="filter-bar" data-reveal role="group" aria-label="Filter projects">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="webapp">Web Apps</button>
+      <button class="filter-btn" data-filter="javascript">JavaScript</button>
+      <button class="filter-btn" data-filter="ui">UI Components</button>
+    </div>
 
     <div class="projects">
-      <div class="project-card" data-reveal="zoom">
-        <h3>To Do App</h3>
-        <div class="project-tags">
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
+      <!-- To Do App -->
+      <article class="project-card glass-card" data-category="webapp javascript" data-reveal="zoom">
+        <div class="project-card__media">
+          <img src="myimage.jpg" alt="To Do App interface preview" width="640" height="400" loading="lazy" />
+          <div class="project-card__overlay">
+            <div class="project-card__actions">
+              <a href="todoapp.html" class="btn btn-small btn-outline-ghost">Live Preview</a>
+              <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">GitHub</a>
+            </div>
+          </div>
         </div>
-        <p>A fully functional task management application with persistent local storage, dynamic UI updates, and a clean, intuitive interface.</p>
-        <div class="project-links">
-          <a href="todoapp.html">View Project →</a>
+        <div class="project-card__body">
+          <h3>To Do App</h3>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <p class="project-card__desc">A task management application with persistent local storage, dynamic UI updates, and a clean, intuitive interface.</p>
+          <ul class="project-card__features">
+            <li>Add, complete, and delete tasks</li>
+            <li>Persistent local storage</li>
+            <li>Responsive, modern UI</li>
+          </ul>
         </div>
+      </article>
+
+      <!-- Calculator App -->
+      <article class="project-card glass-card" data-category="webapp javascript" data-reveal="zoom">
+        <div class="project-card__media">
+          <img src="my-pic.png" alt="Calculator app interface preview" width="640" height="400" loading="lazy" />
+          <div class="project-card__overlay">
+            <div class="project-card__actions">
+              <a href="calculator.html" class="btn btn-small btn-outline-ghost">Live Preview</a>
+              <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <h3>Calculator App</h3>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <p class="project-card__desc">A clean, responsive calculator that performs basic arithmetic with real-time display and a user-friendly interface.</p>
+          <ul class="project-card__features">
+            <li>Full arithmetic operations</li>
+            <li>Real-time display</li>
+            <li>Keyboard-friendly layout</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Student Result Management -->
+      <article class="project-card glass-card" data-category="webapp javascript" data-reveal="zoom">
+        <div class="project-card__media">
+          <img src="myimage.jpg" alt="Student result management system preview" width="640" height="400" loading="lazy" />
+          <div class="project-card__overlay">
+            <div class="project-card__actions">
+              <a href="https://student-result-management314.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">Live Preview</a>
+              <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <h3>Student Result Management</h3>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">JSON</span>
+          </div>
+          <p class="project-card__desc">Lets teachers manage student records, auto-calculate totals, percentages, and grades in an interactive interface.</p>
+          <ul class="project-card__features">
+            <li>Automatic grade calculation</li>
+            <li>Interactive data entry</li>
+            <li>Clean result display</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Console Calculator -->
+      <article class="project-card glass-card" data-category="javascript" data-reveal="zoom">
+        <div class="project-card__media">
+          <img src="mylogo.jpg" alt="Basic JavaScript calculator project preview" width="640" height="400" loading="lazy" />
+          <div class="project-card__overlay">
+            <div class="project-card__actions">
+              <a href="javascriptClw.html" class="btn btn-small btn-outline-ghost">Live Preview</a>
+              <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <h3>JavaScript Compute Lab</h3>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <p class="project-card__desc">A focused utility demonstrating core JavaScript arithmetic with validation and error handling.</p>
+          <ul class="project-card__features">
+            <li>Input validation</li>
+            <li>Division-by-zero handling</li>
+            <li>Clean result output</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Data Table Demo -->
+      <article class="project-card glass-card" data-category="ui" data-reveal="zoom">
+        <div class="project-card__media">
+          <img src="myimage.jpg" alt="Responsive data table UI demonstration" width="640" height="400" loading="lazy" />
+          <div class="project-card__overlay">
+            <div class="project-card__actions">
+              <a href="newtable.html" class="btn btn-small btn-outline-ghost">Live Preview</a>
+              <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline-ghost">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card__body">
+          <h3>Responsive Data Table</h3>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+          </div>
+          <p class="project-card__desc">A polished, responsive data table demonstrating structured layout, styling, and accessibility patterns.</p>
+          <ul class="project-card__features">
+            <li>Structured semantic markup</li>
+            <li>Responsive behavior</li>
+            <li>Clean visual design</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="projects-cta" data-reveal>
+      <a href="projects.html" class="btn outline magnetic">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- ========== CASE STUDIES ========== -->
+  <section class="section" id="case-studies">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Case Studies</span>
+      <h2>Real problems. Real solutions. Real impact.</h2>
+      <p>How each project moved from challenge to outcome.</p>
+    </div>
+
+    <div class="case-grid">
+      <article class="case-card glass-card" data-reveal="zoom">
+        <div class="case-card__header">
+          <h3>To Do App</h3>
+          <div class="project-tags">
+            <span class="project-tag">Local Storage</span>
+            <span class="project-tag">CRUD</span>
+          </div>
+        </div>
+        <div class="case-card__block">
+          <h4>Problem</h4>
+          <p>People needed a simple way to organize daily tasks without losing data between sessions.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Solution</h4>
+          <p>Built a task manager with persistent local storage and instant, dynamic UI updates.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Technologies</h4>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Outcome</h4>
+          <p>A reliable productivity tool with zero data loss and a smooth user experience.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Business Impact</h4>
+          <p>Demonstrates how effective task management improves team and personal productivity.</p>
+        </div>
+      </article>
+
+      <article class="case-card glass-card" data-reveal="zoom">
+        <div class="case-card__header">
+          <h3>Calculator App</h3>
+          <div class="project-tags">
+            <span class="project-tag">UX</span>
+            <span class="project-tag">Real-time</span>
+          </div>
+        </div>
+        <div class="case-card__block">
+          <h4>Problem</h4>
+          <p>Existing calculators were cluttered, slow, and confusing on mobile devices.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Solution</h4>
+          <p>Designed a minimal, responsive calculator with real-time display and instant feedback.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Technologies</h4>
+          <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Outcome</h4>
+          <p>A fast, intuitive tool that works flawlessly across all screen sizes.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Business Impact</h4>
+          <p>Shows how thoughtful UX design removes friction and boosts user satisfaction.</p>
+        </div>
+      </article>
+
+      <article class="case-card glass-card" data-reveal="zoom">
+        <div class="case-card__header">
+          <h3>Student Result Management</h3>
+          <div class="project-tags">
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">JSON</span>
+          </div>
+        </div>
+        <div class="case-card__block">
+          <h4>Problem</h4>
+          <p>Teachers spent hours manually calculating totals, percentages, and grades.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Solution</h4>
+          <p>Automated scoring and grading with an interactive record-management interface.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Technologies</h4>
+          <p>HTML, CSS, JavaScript, JSON</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Outcome</h4>
+          <p>Saves hours of manual work and eliminates calculation errors.</p>
+        </div>
+        <div class="case-card__block">
+          <h4>Business Impact</h4>
+          <p>Automation that frees staff time and improves accuracy — the same principle I apply to business workflows.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section" id="testimonials">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Testimonials</span>
+      <h2>What clients say about working with me</h2>
+      <p>Placeholder testimonials — swap in your real client reviews anytime.</p>
+    </div>
+
+    <div class="testimonial-slider" data-reveal="zoom">
+      <div class="testimonial-track glass-card" id="testimonial-track">
+        <figure class="testimonial-slide" aria-hidden="true">
+          <div class="testimonial-slide__quote" aria-hidden="true">"</div>
+          <blockquote>Emmanuel delivered a website that exceeded our expectations. It's fast, modern, and our customers keep complimenting it. The whole process was smooth and professional.</blockquote>
+          <figcaption>
+            <span class="testimonial-slide__avatar" aria-hidden="true">ST</span>
+            <div>
+              <strong>Sarah Thompson</strong>
+              <span>Marketing Director, SaaS Startup</span>
+              <span class="testimonial-slide__stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-slide" aria-hidden="true">
+          <div class="testimonial-slide__quote" aria-hidden="true">"</div>
+          <blockquote>Our new landing page converts noticeably better than the old one. Emmanuel understands both design and business goals — a rare combination. Highly recommended.</blockquote>
+          <figcaption>
+            <span class="testimonial-slide__avatar" aria-hidden="true">JM</span>
+            <div>
+              <strong>James Mitchell</strong>
+              <span>Founder, E-commerce Brand</span>
+              <span class="testimonial-slide__stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-slide" aria-hidden="true">
+          <div class="testimonial-slide__quote" aria-hidden="true">"</div>
+          <blockquote>Professional, responsive, and genuinely invested in our success. Communication was excellent and the final site loads instantly. I'd hire Emmanuel again without hesitation.</blockquote>
+          <figcaption>
+            <span class="testimonial-slide__avatar" aria-hidden="true">AW</span>
+            <div>
+              <strong>Amanda Williams</strong>
+              <span>Owner, Boutique Agency</span>
+              <span class="testimonial-slide__stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </figcaption>
+        </figure>
       </div>
 
-      <div class="project-card" data-reveal="zoom">
-        <h3>Calculator</h3>
-        <div class="project-tags">
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
-        </div>
-        <p>A clean, responsive calculator that performs basic arithmetic operations with real-time display and a user-friendly interface.</p>
-        <div class="project-links">
-          <a href="calculator.html">View Project →</a>
-        </div>
-      </div>
-
-      <div class="project-card" data-reveal="zoom">
-        <h3>Student Result Management</h3>
-        <div class="project-tags">
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
-          <span class="project-tag">JSON</span>
-        </div>
-        <p>An application that lets teachers manage student records, auto-calculate totals, percentages, and grades in an interactive interface.</p>
-        <div class="project-links">
-          <a href="https://student-result-management314.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
+      <div class="testimonial-controls">
+        <button class="testimonial-btn" id="testimonial-prev" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="testimonial-dots" id="testimonial-dots" role="tablist" aria-label="Testimonial navigation"></div>
+        <button class="testimonial-btn" id="testimonial-next" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section">
-    <h2 data-reveal="left">Let's Build Something Great Together</h2>
-    <p data-reveal>Have a project in mind or just want to say hello? I'd love to hear from you. Let's create something amazing.</p>
-    <div class="btn-group" data-reveal>
-      <a href="contact.html" class="btn">Start a Conversation</a>
-      <a href="about.html" class="btn outline">More About Me</a>
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Skills</span>
+      <h2>Technologies I work with</h2>
+      <p>Continuously learning and refining the tools that deliver real results.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </div>
+        <h3>HTML5</h3>
+        <p>Semantic, accessible markup</p>
+        <div class="skill-card__bar"><span style="--level: 95%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M8 13h8M8 17h5"></path></svg>
+        </div>
+        <h3>CSS3</h3>
+        <p>Modern layouts &amp; animation</p>
+        <div class="skill-card__bar"><span style="--level: 92%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h3>JavaScript</h3>
+        <p>Interactivity &amp; app logic</p>
+        <div class="skill-card__bar"><span style="--level: 88%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+        </div>
+        <h3>PHP</h3>
+        <p>Server-side development</p>
+        <div class="skill-card__bar"><span style="--level: 80%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2z"></path></svg>
+        </div>
+        <h3>Git &amp; GitHub</h3>
+        <p>Version control &amp; collaboration</p>
+        <div class="skill-card__bar"><span style="--level: 85%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+        </div>
+        <h3>Bootstrap</h3>
+        <p>Rapid, responsive frameworks</p>
+        <div class="skill-card__bar"><span style="--level: 82%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </div>
+        <h3>Responsive Design</h3>
+        <p>Mobile-first, all-device pixel-perfect</p>
+        <div class="skill-card__bar"><span style="--level: 94%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3>SEO</h3>
+        <p>On-page &amp; technical optimization</p>
+        <div class="skill-card__bar"><span style="--level: 86%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </div>
+        <h3>Accessibility</h3>
+        <p>Inclusive, keyboard-friendly web</p>
+        <div class="skill-card__bar"><span style="--level: 87%;"></span></div>
+      </div>
+
+      <div class="skill-card glass-card" data-skill data-reveal="zoom">
+        <div class="skill-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3>Performance</h3>
+        <p>Speed &amp; Lighthouse optimization</p>
+        <div class="skill-card__bar"><span style="--level: 90%;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="section-heading text-center" data-reveal>
+      <span class="section-tag">Contact</span>
+      <h2>Let's build your website</h2>
+      <p>Tell me about your project and get a free consultation. I'll reply within 24 hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-cta glass-card" data-reveal="left">
+          <h3>Ready to grow online?</h3>
+          <p>Get a free consultation and a clear action plan for your website — no obligation.</p>
+          <a href="mailto:emmanuelprosper1314@gmail.com" class="btn magnetic">Email Me Directly</a>
+        </div>
+
+        <div class="contact-card--info glass-card" data-reveal="left">
+          <h3>Contact Details</h3>
+          <ul>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:emmanuelprosper1314@gmail.com">emmanuelprosper1314@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </span>
+              <div>
+                <strong>GitHub</strong>
+                <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">github.com/emmanuelprosper1314</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <div>
+                <strong>Based In</strong>
+                <span>Available Worldwide · Remote</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap glass-card" data-reveal="right">
+        <h3>Send a Message</h3>
+
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/emmanuelprosper1314@gmail.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Project Inquiry — Portfolio" />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Jane Doe" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cf-email">Your Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Project Inquiry" required />
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message">Project Details</label>
+            <textarea id="cf-message" name="message" rows="6" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-block magnetic">Send Message</button>
+        </form>
+
+        <div id="form-success" class="form-success" hidden>
+          <div class="form-success__check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <strong>Message sent!</strong>
+          <p>Thanks for reaching out — I'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map placeholder -->
+    <div class="map-placeholder glass-card" data-reveal="zoom">
+      <div class="map-placeholder__grid" aria-hidden="true"></div>
+      <div class="map-placeholder__pin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>Worldwide — Remote Friendly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="section" id="cta">
+    <div class="cta-banner glass-card" data-reveal="zoom">
+      <h2>Have a project in mind? Let's talk.</h2>
+      <p>Book a free consultation and let's map out how a high-converting website can grow your business.</p>
+      <div class="btn-group">
+        <a href="#contact" class="btn magnetic">Book a Free Consultation</a>
+        <a href="#work" class="btn outline magnetic">See My Work First</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer">GitHub</a>
+<!-- ========== FLOATING CTA ========== -->
+<a href="#contact" id="floating-cta" class="floating-cta magnetic" aria-label="Let's build your website">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  <span>Let's Build Your Website</span>
+</a>
+
+<!-- ========== BACK TO TOP ========== -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- ========== FOOTER v2 ========== -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="logo">Emmanuel<span class="logo__dot">.</span></a>
+      <p>I build fast, modern, high-converting websites that help businesses grow, build trust, and win more customers online.</p>
     </div>
-    <div class="footer-divider"></div>
-    <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> Emmanuel Prosper. All rights reserved. | Crafted with care and clean code.</p>
+
+    <div class="footer-nav">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+
+    <div class="footer-nav">
+      <h4>Supporting Pages</h4>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">All Projects</a></li>
+        <li><a href="contact.html" >Contact Page</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="socials">
+        <a href="https://github.com/emmanuelprosper1314" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.79 1.08.79 2.18v3.23c0 .31.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:emmanuelprosper1314@gmail.com" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider"></div>
+
+  <div class="footer-bottom text-center">
+    <p>&copy; <span id="year"></span> Emmanuel Prosper. All rights reserved. | Crafted with care and clean code.</p>
   </div>
 </footer>
 

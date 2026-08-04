@@ -53,11 +53,11 @@
   </div>
 </div>
 
-<header>
+<header class="site-header" id="site-header">
   <div class="header-inner">
-    <a href="index.html" class="logo">Emmanuel</a>
+    <a href="index.html" class="logo">Emmanuel<span class="logo__dot">.</span></a>
 
-    <nav>
+    <nav class="site-nav" aria-label="Primary navigation">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -65,6 +65,8 @@
         <li><a href="contact.html" class="is-active">Contact</a></li>
       </ul>
     </nav>
+
+    <a href="contact.html" class="btn btn-small btn-nav-cta magnetic">Book a Call</a>
 
     <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
       <span></span>
@@ -83,7 +85,7 @@
       <h1>Get In Touch</h1>
       <p>Have a project in mind or just want to say hello? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.</p>
 
-      <form action="https://formsubmit.co/emmanuelprosper1314@gmail.com" method="POST">
+      <form id="contact-form" action="https://formsubmit.co/emmanuelprosper1314@gmail.com" method="POST" novalidate>
 
         <input type="hidden" name="_subject" value="New Portfolio Message">
         <input type="hidden" name="_captcha" value="false">
@@ -111,6 +113,14 @@
         <button type="submit" class="btn btn-block">Send Message</button>
 
       </form>
+
+      <div id="form-success" class="form-success" hidden>
+        <div class="form-success__check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <strong>Message sent!</strong>
+        <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+      </div>
 
       <div class="footer-divider"></div>
 

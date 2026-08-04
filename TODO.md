@@ -1,15 +1,13 @@
-# Premium Portfolio Enhancement — Task List
+# Premium Agency-Quality Portfolio — Task List
 
 ## Steps
-- [x] 1. Enhance `style.css` design system (fonts, tokens, glass, glow)
-- [x] 2. Add premium background system (aurora, grid, noise, orbs)
-- [x] 3. Add loader, scroll progress, custom cursor, glass navbar
-- [x] 4. Upgrade hero (animated headline, scroll indicator, floating chips) — no profile image
-- [x] 5. Add stats/counters, 3D tilt cards, magnetic buttons, reveal animations
-- [x] 6. Add reduced-motion accessibility + responsive rules
-- [x] 7. Enhance `script.js` animation engine (modular functions)
-- [x] 8. Update `index.html` (background layers, loader, enhanced hero, stats, reveals)
-- [x] 9. Update `about.html` (background layers, loader, reveals)
-- [x] 10. Update `projects.html` (background layers, loader, reveals)
-- [x] 11. Update `contact.html` (background layers, loader, reveals)
-- [x] 12. Test all pages — verified file integrity, no broken links, all assets present
+- [x] 6. Extend `style.css` (nav indicator, hero entrance, services, why-choose, process, projects, case studies, testimonials, skills, contact, floating CTA, footer, lightbox)
+- [x] 7. Extend `script.js` (scrollspy, project filters, testimonial slider, form success, floating CTA, back-to-top, image zoom, skill bars)
+- [x] 8. Update `about.html`, `projects.html`, `contact.html` nav links + shared styles + contact form success
+- [x] 1. Rebuild `index.html` as single-page agency portfolio (SEO head, glass nav, client-focused hero, background)
+- [x] 2. Add Stats counters, About w/ profile card, Services (8 glass cards) to index
+- [x] 3. Add Why Choose Me, Process timeline, Projects (filters + redesigned cards) to index
+- [x] 4. Add Case Studies, Testimonials slider, Skills (premium cards) to index
+- [x] 5. Add Contact (form, map placeholder, socials, success animation), Floating CTA, Footer v2 to index
+- [x] 9. Test all pages — verified file integrity, links, structure, and consistency
+

@@ -31,6 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
   setupParticles();
   setupCursorGlow();
   setupCustomCursor();
+  setupScrollSpy();
+  setupProjectFilters();
+  setupTestimonialSlider();
+  setupFormSuccess();
+  setupFloatingCTA();
+  setupBackToTop();
+  setupSkillBars();
+  setupImageZoom();
 
   // Mark page ready
   requestAnimationFrame(() => {
@@ -491,6 +499,225 @@ function setupCustomCursor() {
   // Hide native cursor highlight interaction
   document.addEventListener("pointerdown", () => ring.classList.add("is-hovering"));
   document.addEventListener("pointerup", () => ring.classList.remove("is-hovering"));
+}
+
+// ========== SCROLLSPY — Active nav link highlighting ==========
+function setupScrollSpy() {
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+  if (!sections.length || !navLinks.length) return;
+
+  const observerOptions = {
+    rootMargin: "-45% 0px -50% 0px",
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.getAttribute("id");
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+      });
+    });
+  }, observerOptions);
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+// ========== PROJECT FILTERS ==========
+function setupProjectFilters() {
+  const filterBar = document.querySelector(".filter-bar");
+  if (!filterBar) return;
+
+  const buttons = filterBar.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".project-card");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach((card) => {
+        const categories = (card.dataset.category || "").split(" ").filter(Boolean);
+        const matches = filter === "all" || categories.includes(filter);
+        card.classList.toggle("is-filtered-out", !matches);
+        if (matches) {
+          card.style.animation = "none";
+          void card.offsetWidth; // restart animation
+          card.style.animation = "";
+        }
+      });
+    });
+  });
+}
+
+// ========== TESTIMONIAL SLIDER ==========
+function setupTestimonialSlider() {
+  const track = document.getElementById("testimonial-track");
+  const prevBtn = document.getElementById("testimonial-prev");
+  const nextBtn = document.getElementById("testimonial-next");
+  const dotsWrap = document.getElementById("testimonial-dots");
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const slides = Array.from(track.querySelectorAll(".testimonial-slide"));
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "testimonial-dot";
+    dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
+    dot.addEventListener("click", () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll(".testimonial-dot"));
+
+  function goTo(index) {
+    currentIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.setAttribute("aria-hidden", String(i !== currentIndex));
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === currentIndex);
+    });
+  }
+
+  prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+  nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+
+  // Optional auto-advance
+  let autoTimer = setInterval(() => goTo(currentIndex + 1), 6000);
+  track.addEventListener("pointerenter", () => clearInterval(autoTimer));
+  track.addEventListener("pointerleave", () => {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(currentIndex + 1), 6000);
+  });
+
+  goTo(0);
+}
+
+// ========== FORM SUCCESS HANDLING ==========
+function setupFormSuccess() {
+  const form = document.getElementById("contact-form");
+  const success = document.getElementById("form-success");
+  if (!form || !success) return;
+
+  form.addEventListener("submit", (e) => {
+    // Let the form submit normally to FormSubmit, but show
+    // the success message only if the form passes validation.
+    if (!form.checkValidity()) return;
+
+    // Show feedback immediately for a smoother UX.
+    success.hidden = false;
+    form.querySelectorAll("input, textarea").forEach((field) => (field.value = ""));
+    form.querySelector("button[type='submit']").disabled = true;
+
+    // Fallback: if the page navigates away, the message is moot.
+    // If the request is blocked, re-enable after a timeout.
+    setTimeout(() => {
+      form.querySelector("button[type='submit']").disabled = false;
+    }, 8000);
+  });
+}
+
+// ========== FLOATING CTA ==========
+function setupFloatingCTA() {
+  const cta = document.getElementById("floating-cta");
+  if (!cta) return;
+
+  const onScroll = () => {
+    cta.classList.toggle("is-visible", window.pageYOffset > 500);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+// ========== BACK TO TOP ==========
+function setupBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+
+  const onScroll = () => {
+    btn.classList.toggle("is-visible", window.pageYOffset > 600);
+  };
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+}
+
+// ========== SKILL BAR ANIMATION ==========
+function setupSkillBars() {
+  if (prefersReducedMotion) return;
+
+  const cards = document.querySelectorAll(".skill-card[data-skill]");
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  cards.forEach((card) => observer.observe(card));
+}
+
+// ========== IMAGE ZOOM (Lightbox) ==========
+function setupImageZoom() {
+  const images = document.querySelectorAll(".project-card__media img");
+  if (!images.length) return;
+
+  // Build lightbox
+  const lightbox = document.createElement("div");
+  lightbox.className = "lightbox";
+  lightbox.setAttribute("aria-hidden", "true");
+  lightbox.innerHTML = `
+    <button class="lightbox__close" aria-label="Close image">×</button>
+    <img class="lightbox__img" alt="" />
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector(".lightbox__img");
+  const closeBtn = lightbox.querySelector(".lightbox__close");
+
+  images.forEach((img) => {
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  function close() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  closeBtn.addEventListener("click", close);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
 }
 
 // ========== UTILITY FUNCTIONS ==========
